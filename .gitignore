@@ -1,0 +1,5 @@
+*.mak
+*.swp
+download/*
+kconfig/*
+output/*
