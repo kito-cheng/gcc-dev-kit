@@ -1,0 +1,62 @@
+# Toolchain configuration
+
+mainmenu "Toolchain configuration"
+
+choice
+	prompt "Architecture"
+	default TARGET_V3
+	help
+	  The architecture of your target.
+
+config TARGET_V3M
+	bool "v3m"
+
+config TARGET_V3
+	bool "v3"
+endchoice
+
+choice
+	prompt "Endian"
+	default TARGET_LITTLE_ENDIAN
+	help
+	  The architecture of your target.
+
+config TARGET_LITTLE_ENDIAN
+	bool "Little endian"
+
+config TARGET_BIG_ENDIAN
+	bool "Big endian"
+endchoice
+
+
+
+menu "newlib configure"
+
+config NEWLIB_SMALL_REENT
+	bool "small reent struct"
+	default n
+
+config NEWLIB_NANO_MALLOC
+	bool "nano version malloc implmentation"
+	default n
+
+config NEWLIB_WIDE_ORIENT
+	bool "wide orient"
+	default y
+
+config NEWLIB_LITE_EXIT
+	bool "lite exit"
+	default n
+endmenu
+
+config OUTPUT_DIR
+        string "Build output directory"
+        default "output"
+
+config SRC_DIR
+        string "Source code directory"
+        default "srcs"
+
+config DOWNLOAD_DIR
+        string "Download directory"
+        default "download"
