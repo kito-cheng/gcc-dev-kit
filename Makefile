@@ -10,6 +10,7 @@ include lib/path.mak
 include lib/stmp.mak
 # Include var.mak for initialize misc variables
 include lib/var.mak
+include lib/src-url.mak
 
 all: $(GCC_BOOTSTRAP_STMP) $(BINUTILS_STMP)
 
@@ -29,5 +30,10 @@ $(CONFIG): $(KCONFIG_DIR)/$(MCONF)
 
 $(TOOLCHAIN_STMP): $(BINUTILS_STMP)
 
+test:
+
+sync:
+
+include lib/host-tool.mak
 include lib/host-tools.mak
 include lib/toolchain.mak
